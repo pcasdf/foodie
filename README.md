@@ -46,7 +46,7 @@ https://www.spoonacular.com/
 |May 15| Present | Incomplete
 
 ## Priority Matrix
-![priority matrix](https://git.generalassemb.ly/pcho90/foodie/blob/master/Priority Matrix.jpg)
+![priority matrix](https://git.generalassemb.ly/pcho90/foodie/blob/master/priority-matrix.jpg)
 
 ## Timeframes
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
