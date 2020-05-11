@@ -39,9 +39,9 @@ https://spoonacular.com/food-api/docs
 |---|---| ---|
 |May 8| Project Prompt | Complete
 |May 9-10| Wireframes / Priority Matrix / Timeframes | Complete
-|May 11| HTML, Fetching API | Incomplete
-|May 12| UI Interactivity | Incomplete
-|May 13| CSS  | Incomplete
+|May 11| HTML, Fetching API | Complete
+|May 12| UI Interactivity | Complete
+|May 13| CSS  | Complete
 |May 14| Final Touches | Incomplete
 |May 15| Present | Incomplete
 
@@ -51,13 +51,13 @@ https://spoonacular.com/food-api/docs
 ## Timeframes
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| HTML | H | 4hrs | 0 | 0 |
-| Rendering List | H | 2hrs| 0 | 0 |
+| HTML | H | 4hrs | 4hrs | 0 |
+| Rendering List | H | 2hrs| 2hr | 0 |
 | Toggle Details | H | 6hrs | 0 | 0 |
 | Filters | M | 4hrs | 0 | 0 |
-| Bookmarks | M | 2hrs | 0 | 0 |
+| Bookmarks | M | 2hrs | 1hr | 0 |
 | CSS | M | 4hrs | 0 | 0 |
-| YouTube Stream | L | 4hrs | 0 | 0 |
-| YouTube Modal | L | 2hrs | 0 | 0 |
-| Total | H | 30hrs| 0hrs | 0hrs |
+| YouTube Stream | L | 4hrs | 0.5hr | 0 |
+| YouTube Modal | L | 2hrs | 0.5hr | 0 |
+| Total | H | 30hrs| 8hrs | 0hrs |
 
