@@ -29,9 +29,9 @@ https://www.spoonacular.com/
 - Recipe search functionality.
 - Interactive UI.
 - Filter recipes by ingredients, cuisine, and more.
-- Bookmark favorites into local storage.
 
 ## Post-MVP
+- Bookmark favorites into local storage.
 - YouTube Video Search
 
 ## Goals
