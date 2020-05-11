@@ -1,0 +1,154 @@
+.body {
+  width: 80%;
+  margin: 0 auto;
+  font-family: 'Muli', sans-serif;
+}
+
+.header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-family: 'Cardo', serif;
+  font-size: 4rem;
+  letter-spacing: 0.5rem;
+  padding-top: 2rem;
+  padding-bottom: 0px;
+  margin-bottom: 2rem;
+}
+
+.header input {
+  width: 60%;
+  padding: 15px 10px;
+  font-size: 1rem;
+}
+
+.main {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-evenly;
+  width: 80%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.recipe {
+  width: 30%;
+  /* border: 1px black solid; */
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.recipe-content {
+  width: 100%;
+}
+
+.recipe-img {
+  align-content: center;
+}
+
+.recipe img {
+  max-width: 100%;
+  height: auto;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+  background-color: #ffffff;
+  margin: 10% auto;
+  padding: 3rem;
+  width: 60%;
+}
+.modal-content-video {
+  background-color: #ffffff;
+  margin: 10% auto;
+  display: flex;
+  justify-content: center;
+  width: 736px;
+}
+.modal-content-video iframe {
+  width: 736px;
+  height: 414px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.modal-body {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.modal-img {
+  margin: auto 0;
+  width: 50%;
+}
+
+.modal-details {
+  width: 50%;
+  padding-left: 1rem;
+}
+
+.modal-ingredients {
+  width: 50%;
+}
+
+.ingredients {
+  list-style: none;
+}
+
+.modal-instructions {
+  width: 50%;
+}
+
+.modal-instructions li {
+  margin: 1rem;
+}
+
+.nav-bar {
+  padding-top: 10px;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.nav-bar span {
+  width: 10%;
+  padding-bottom: 10px;
+}
+
+.video-card {
+  display: flex;
+  margin: 1rem;
+}
+
+.video-img {
+  margin: 1rem;
+}
+
+.video-player {
+  border: none;
+  height: 100%;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cardo:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Muli&display=swap"
+      rel="stylesheet"
+    />
+    <title>foodie</title>
+  </head>
+  <body>
+    <div class="body" id="body">
+      <div class="header">
+        <h1>foodie</h1>
+        <div class="search">
+          <form id="search">
+            <input type="text" name="input" autocomplete="off" />
+          </form>
+        </div>
+        <div class="nav-bar">
+          <span id="filter-dropdown">Filter</span>
+          <span id="main-link">Recipes</span>
+          <span id="bookmarks-link">Bookmarks</span>
+          <span id="videos-link">Videos</span>
+        </div>
+        <div class="filters" id="filters"></div>
+      </div>
+
+      <div class="main" id="main"></div>
+    </div>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
