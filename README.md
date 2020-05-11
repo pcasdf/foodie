@@ -5,7 +5,7 @@ Foodie is a single page application that allows users to search and filter throu
 
 ## API
 spoonacularAPI  
-https://www.spoonacular.com/
+https://spoonacular.com/food-api/docs
 
 ## API Snippet
 ```
