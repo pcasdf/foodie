@@ -52,7 +52,7 @@ https://spoonacular.com/food-api/docs
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | HTML | H | 4hrs | 4hrs | 0 |
-| Rendering List | H | 2hrs| 2hr | 0 |
+| Rendering List | H | 2hrs| 2hrs | 0 |
 | Toggle Details | H | 6hrs | 0 | 0 |
 | Filters | M | 4hrs | 0 | 0 |
 | Bookmarks | M | 2hrs | 1hr | 0 |
