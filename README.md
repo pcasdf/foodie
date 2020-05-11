@@ -38,11 +38,11 @@ https://spoonacular.com/food-api/docs
 |  Day | Deliverable | Status
 |---|---| ---|
 |May 8| Project Prompt | Complete
-|May 9-10| Wireframes / Priority Matrix / Timeframes | Incomplete
-|May 11| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|May 12| Pseudocode / actual code | Incomplete
-|May 13| Initial Clickable Model  | Incomplete
-|May 14| MVP | Incomplete
+|May 9-10| Wireframes / Priority Matrix / Timeframes | Complete
+|May 11| HTML, Fetching API | Incomplete
+|May 12| UI Interactivity | Incomplete
+|May 13| CSS  | Incomplete
+|May 14| Final Touches | Incomplete
 |May 15| Present | Incomplete
 
 ## Priority Matrix
