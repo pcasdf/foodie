@@ -1,13 +1,22 @@
+body {
+  background-image: url('https://images.unsplash.com/photo-1506368083636-6defb67639a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80');
+}
+
 .body {
   width: 80%;
   margin: 0 auto;
   font-family: 'Muli', sans-serif;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 0.5rem;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
 }
 
 .header {
   width: 100%;
   text-align: center;
   margin-bottom: 1rem;
+  padding-top: 1rem;
 }
 
 .header h1 {
@@ -85,7 +94,7 @@
 
 .modal-content {
   background-color: #ffffff;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   margin: 10% auto;
   padding: 3rem;
   width: 60%;
