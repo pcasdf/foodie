@@ -15,11 +15,19 @@ export const renderIngredients = (id, data) => {
 
 export const renderVideos = items => {
   main.innerHTML = '';
+  filters.innerHTML = '';
   items.forEach(item => (main.innerHTML += createVideoCard(item)));
 };
 
 export const renderBookmarks = items => {
   main.innerHTML = '';
-  const bookmarks = localStorage.getItem('foodie-bookmarks').split(',');
+  const foodieBookmarks = localStorage.getItem('foodie-bookmarks');
+  localStorage.setItem('foodie-state', foodieBookmarks);
+  const bookmarks = foodieBookmarks.split(',');
   bookmarks.forEach(item => fetchBookmark(item));
+};
+
+export const renderState = state => {
+  main.innerHTML = '';
+  state.forEach(item => fetchBookmark(item));
 };

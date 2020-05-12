@@ -1,6 +1,7 @@
 import { toggleModal } from './toggleModal.js';
 import { fetchRecipes, fetchVideos } from './actions.js';
 import { renderBookmarks } from './renders.js';
+import { renderFilters, toggleFilters } from './filters.js';
 
 const border = 'border-bottom: 1px solid black';
 const none = 'border-bottom: none';
@@ -24,6 +25,7 @@ const handleShowBookmarks = e => {
 
   main.innerHTML = '';
 
+  resetFilters();
   renderBookmarks();
 };
 
@@ -33,12 +35,26 @@ const handleShowVideos = () => {
     bookmarksLink.style = none;
     videosLink.style = border;
 
+    resetFilters();
     fetchVideos(search.input.value);
   }
 };
 
-const toggleFilters = () => {
-  filters.innerHTML = 'hello';
+const handleFilters = e => {
+  const filterState = localStorage.getItem('filter-state').split(',');
+
+  if (e.target.checked) {
+    if (!filterState.includes(e.target.id)) {
+      localStorage.setItem('filter-state', filterState + ',' + e.target.id);
+    }
+  } else {
+    const nextFilterState = filterState
+      .filter(each => each !== e.target.id)
+      .join(',');
+    localStorage.setItem('filter-state', nextFilterState);
+  }
+
+  renderFilters();
 };
 
 const search = document.getElementById('search');
@@ -55,3 +71,12 @@ mainLink.addEventListener('click', e => handleSubmit(e));
 bookmarksLink.addEventListener('click', e => handleShowBookmarks(e));
 videosLink.addEventListener('click', handleShowVideos);
 filterLink.addEventListener('click', toggleFilters);
+filters.addEventListener('click', handleFilters);
+
+const resetFilters = () => {
+  filters.innerHTML = '';
+  localStorage.setItem('filter-state', '');
+  localStorage.setItem('foodie-state', '');
+};
+
+resetFilters();

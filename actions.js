@@ -29,10 +29,17 @@ export const fetchVideos = async term => {
 };
 
 export const fetchRecipes = async term => {
+  const filters = localStorage.getItem('filter-state').split(',');
+  const updatedFilters = filters.filter(item => item !== '');
+  const queryParams = updatedFilters.join(',');
   try {
     const response = await axios.get(
-      `https://api.spoonacular.com/recipes/search?apiKey=${KEY}&query=${term}&number=10`
+      `https://api.spoonacular.com/recipes/search?apiKey=${KEY}&query=${term}&number=3&diet=${queryParams}&intolerances=${queryParams}`
     );
+
+    localStorage.setItem('foodie-state', '');
+    localStorage.setItem('foodie-filtered', '');
+    console.log(localStorage.getItem('foodie-state'));
     response.data.results.forEach(item => fetchDetails(item.id));
   } catch (error) {
     console.log('error');
@@ -45,8 +52,13 @@ const fetchDetails = async id => {
     const response = await axios.get(
       `https://api.spoonacular.com/recipes/${id}/information?apiKey=${KEY}`
     );
+
     main.innerHTML += createCard(response.data);
+
+    const prevState = localStorage.getItem('foodie-state');
+    localStorage.setItem('foodie-state', prevState + ',' + id);
     localStorage.setItem(id, JSON.stringify(response.data));
+
     renderInstructions(id, response.data.analyzedInstructions[0].steps);
     renderIngredients(id, response.data.extendedIngredients);
   } catch (error) {
@@ -58,7 +70,9 @@ export const fetchBookmark = item => {
   const data = JSON.parse(localStorage.getItem(item));
   if (data) {
     main.innerHTML += createCard(data);
-    renderInstructions(item, data.analyzedInstructions[0].steps);
+    if (data.analyzedInstructions.length > 0) {
+      renderInstructions(item, data.analyzedInstructions[0].steps);
+    }
     renderIngredients(item, data.extendedIngredients);
   }
 };

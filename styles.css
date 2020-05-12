@@ -7,7 +7,7 @@
 .header {
   width: 100%;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .header h1 {
@@ -21,7 +21,7 @@
 
 .header input {
   width: 60%;
-  padding: 15px 10px;
+  padding: 1rem 0.7rem;
   font-size: 1rem;
 }
 
@@ -34,11 +34,28 @@
   padding: 1rem;
 }
 
+.button {
+  background-color: #2196f3;
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+  color: white;
+  padding: 0.9rem 1.4rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
 .recipe {
   width: 30%;
-  /* border: 1px black solid; */
   margin-bottom: 1rem;
   text-align: center;
+}
+
+.recipe h4 {
+  font-weight: 400;
 }
 
 .recipe-content {
@@ -68,6 +85,7 @@
 
 .modal-content {
   background-color: #ffffff;
+  border-radius: 1rem;
   margin: 10% auto;
   padding: 3rem;
   width: 60%;
@@ -109,6 +127,7 @@
 .modal-details {
   width: 50%;
   padding-left: 1rem;
+  padding-top: 0;
 }
 
 .modal-ingredients {
@@ -117,6 +136,11 @@
 
 .ingredients {
   list-style: none;
+}
+
+.ingredients li {
+  border-bottom: 1px solid #eeeeee;
+  padding: 15px 0;
 }
 
 .modal-instructions {
@@ -151,4 +175,27 @@
 .video-player {
   border: none;
   height: 100%;
+}
+
+.video-details h3 {
+  font-weight: 500;
+}
+
+.filters {
+  width: 70%;
+  margin: 0 auto;
+  flex-flow: column nowrap;
+}
+
+.filter-form {
+  display: flex;
+  justify-content: start;
+}
+
+.filter-form input {
+  width: 3%;
+}
+
+.filter-forms label {
+  width: 90%;
 }
