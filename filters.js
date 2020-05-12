@@ -35,9 +35,10 @@ export const renderFilters = () => {
   console.log(prevState);
   console.log(state);
   console.log(newState);
+  console.log(filterState);
 
-  if (newState.length === 0) {
-    renderState(state);
+  if (filterState.length <= 1) {
+    renderState(prevState);
   } else {
     renderState(newState);
   }
