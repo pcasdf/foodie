@@ -29,17 +29,23 @@ export const fetchVideos = async term => {
 };
 
 export const fetchRecipes = async term => {
-  const filters = localStorage.getItem('filter-state').split(',');
-  const updatedFilters = filters.filter(item => item !== '');
-  const queryParams = updatedFilters.join(',');
+  const dietParams = localStorage
+    .getItem('diet-params')
+    .split(',')
+    .filter(each => each !== '')
+    .join(',');
+  const intoleranceParams = localStorage
+    .getItem('intolerance-params')
+    .split(',')
+    .filter(each => each !== '')
+    .join(',');
+
   try {
     const response = await axios.get(
-      `https://api.spoonacular.com/recipes/search?apiKey=${KEY}&query=${term}&number=3&diet=${queryParams}&intolerances=${queryParams}`
+      `https://api.spoonacular.com/recipes/search?apiKey=${KEY}&query=${term}&number=12&diet=${dietParams}&intolerances=${intoleranceParams}`
     );
-
     localStorage.setItem('foodie-state', '');
     localStorage.setItem('foodie-filtered', '');
-    console.log(localStorage.getItem('foodie-state'));
     response.data.results.forEach(item => fetchDetails(item.id));
   } catch (error) {
     console.log('error');
