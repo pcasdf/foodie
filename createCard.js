@@ -40,7 +40,7 @@ export const createCard = item => {
               ${
                 localStorage.getItem('foodie-bookmarks').includes(id)
                   ? 'Remove Bookmark'
-                  : 'Bookmark'
+                  : 'Add Bookmark'
               }
               </button>
             </div>

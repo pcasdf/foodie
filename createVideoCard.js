@@ -1,19 +1,20 @@
 export const createVideoCard = item => {
+  const { id, snippet } = item;
   const card = `
-    <div class='video-card' id='${item.id.videoId}'>
+    <div class='video-card' id='${id.videoId}'>
 
-      <div class='video-img' id='${item.id.videoId}'>
-        <img src='${item.snippet.thumbnails.medium.url}' id='${item.id.videoId}'>
+      <div class='video-img' id='${id.videoId}'>
+        <img src='${snippet.thumbnails.medium.url}' id='${id.videoId}'>
       </div>
 
-      <div class='video-details' id='${item.id.videoId}'>
-        <h3>${item.snippet.title}</h3>
-        <p>${item.snippet.description}</p>
+      <div class='video-details' id='${id.videoId}'>
+        <h3>${snippet.title}</h3>
+        <p>${snippet.description}</p>
       </div>
 
-      <div class='modal' id='${item.id.videoId}-modal'>
+      <div class='modal' id='${id.videoId}-modal'>
         <div class='modal-content-video'>
-          <iframe class='video-player' src='https://www.youtube.com/embed/${item.id.videoId}' />
+          <iframe class='video-player' src='https://www.youtube.com/embed/${id.videoId}' />
         </div>
       </div>
       
