@@ -51,13 +51,13 @@ https://spoonacular.com/food-api/docs
 ## Timeframes
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| HTML | H | 4hrs | 4hrs | 0 |
-| Rendering List | H | 2hrs| 2hrs | 0 |
-| Toggle Details | H | 6hrs | 0 | 0 |
-| Filters | M | 4hrs | 0 | 0 |
-| Bookmarks | M | 2hrs | 1hr | 0 |
-| CSS | M | 4hrs | 0 | 0 |
-| YouTube Stream | L | 4hrs | 0.5hr | 0 |
-| YouTube Modal | L | 2hrs | 0.5hr | 0 |
-| Total | H | 30hrs| 8hrs | 0hrs |
+| HTML | H | 4hrs | 4hrs | 4hrs |
+| Rendering List | H | 2hrs| 2hrs | 2hrs |
+| Toggle Details | H | 6hrs | 2hrs | 2hrs |
+| Filters | M | 4hrs | 6hrs | 6hrs |
+| Bookmarks | M | 2hrs | 1hr | 1hr |
+| CSS | M | 4hrs | 1hr | 1hr |
+| YouTube Stream | L | 4hrs | 0.5hr | 0.5hr |
+| YouTube Modal | L | 2hrs | 0.5hr | 0.5hr |
+| Total | H | 30hrs| 17hrs | 17hrs |
 
