@@ -1,4 +1,4 @@
-import { createCard } from './createCard.js';
+import { createCard } from './card.component.js';
 import {
   renderIngredients,
   renderInstructions,
@@ -6,9 +6,9 @@ import {
 } from './renders.js';
 
 const KEY = '51669788a26741668f1b7c5945d50131';
-const GOOGLE_KEY = 'AIzaSyCFOgHnJRsojlI70HlZ1HGoDF2bS2u1pYA';
+const GOOGLE_KEY = 'AIzaSyACGwyCMNDgQcweesXc_uCuc7EZ_I6FOA8';
 
-export const fetchVideos = async term => {
+export const fetchVideos = async (term, token) => {
   try {
     const response = await axios.get(
       'https://www.googleapis.com/youtube/v3/search',
@@ -18,10 +18,14 @@ export const fetchVideos = async term => {
           part: 'snippet',
           type: 'video',
           maxResults: 10,
+          pageToken: token,
           key: GOOGLE_KEY
         }
       }
     );
+    localStorage.setItem('next-video', response.data.nextPageToken);
+    localStorage.setItem('prev-video', response.data.prevPageToken);
+    console.log(response.data);
     renderVideos(response.data.items);
   } catch (error) {
     console.log('error');
@@ -44,8 +48,11 @@ export const fetchRecipes = async term => {
     const response = await axios.get(
       `https://api.spoonacular.com/recipes/search?apiKey=${KEY}&query=${term}&number=12&diet=${dietParams}&intolerances=${intoleranceParams}`
     );
+    console.log(response);
     localStorage.setItem('foodie-state', '');
     localStorage.setItem('foodie-filtered', '');
+    localStorage.setItem('total-results', response.data.totalResults);
+    console.log(localStorage.getItem('total-results'));
     response.data.results.forEach(item => fetchDetails(item.id));
   } catch (error) {
     console.log('error');
@@ -58,7 +65,6 @@ const fetchDetails = async id => {
       `https://api.spoonacular.com/recipes/${id}/information?apiKey=${KEY}`
     );
     localStorage.setItem(id, JSON.stringify(response.data));
-
     const prevState = localStorage.getItem('foodie-state');
     localStorage.setItem('foodie-state', prevState + ',' + id);
   } catch (error) {

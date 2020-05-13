@@ -2,6 +2,23 @@ body {
   background-image: url('https://images.unsplash.com/photo-1506368083636-6defb67639a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80');
 }
 
+a {
+  text-decoration: none;
+  color: #2196f3;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+span:hover {
+  cursor: default;
+}
+
+h3:hover {
+  cursor: default;
+}
+
 .body {
   width: 80%;
   margin: 0 auto;
@@ -38,7 +55,7 @@ body {
 .main {
   display: flex;
   flex-flow: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   width: 80%;
   margin: 0 auto;
   padding: 1rem;
@@ -58,6 +75,10 @@ body {
   margin-bottom: 1rem;
 }
 
+.source {
+  margin-top: 3rem;
+}
+
 .recipe {
   width: 30%;
   margin-bottom: 1rem;
@@ -66,6 +87,7 @@ body {
 
 .recipe h4 {
   font-weight: 400;
+  margin-top: 0.7rem;
 }
 
 .recipe-content {
@@ -94,10 +116,8 @@ body {
 }
 
 .modal-content {
-  background-color: #ffffff;
   border-radius: 0.5rem;
   margin: 10% auto;
-  padding: 3rem;
   width: 60%;
 }
 .modal-content-video {
@@ -119,25 +139,58 @@ body {
   cursor: pointer;
 }
 
+.modal-title {
+  padding: 2rem 0 1rem 4rem;
+  margin-bottom: 0;
+  text-align: left;
+}
+
 .modal-header {
   display: flex;
   flex-flow: row nowrap;
+  margin: 0 3rem;
+  padding-bottom: 3rem;
+}
+
+.modal-title span {
+  font-family: 'Cardo', serif;
+  font-size: 2rem;
+  text-transform: lowercase;
+}
+
+.modal-top {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 1rem;
+}
+
+.modal-description {
+  text-align: left;
+  line-height: 1.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 1rem;
+  padding: 1.5rem 3rem;
+  margin: 2rem 0;
 }
 
 .modal-body {
   display: flex;
   flex-flow: row nowrap;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 1rem;
+  padding: 1rem 2rem 2rem 2rem;
+  text-align: left;
 }
 
 .modal-img {
   margin: auto 0;
-  width: 50%;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  width: 70%;
 }
 
 .modal-details {
   width: 50%;
-  padding-left: 1rem;
-  padding-top: 0;
+  padding: 1rem 0 0 1rem;
 }
 
 .modal-ingredients {
@@ -154,6 +207,8 @@ body {
 }
 
 .modal-instructions {
+  padding-top: 1rem;
+  line-height: 1.5rem;
   width: 50%;
 }
 
@@ -173,9 +228,16 @@ body {
   padding-bottom: 10px;
 }
 
+.video-nav-content {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2rem 5rem;
+  padding-bottom: 0;
+}
+
 .video-card {
   display: flex;
-  margin: 1rem;
+  padding-bottom: 0;
 }
 
 .video-img {
@@ -185,6 +247,10 @@ body {
 .video-player {
   border: none;
   height: 100%;
+}
+
+.video-details {
+  padding: 1rem 2rem;
 }
 
 .video-details h3 {

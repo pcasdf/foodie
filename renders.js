@@ -1,4 +1,4 @@
-import { createVideoCard } from './createVideoCard.js';
+import { createVideoCard } from './video-card.component.js';
 import { fetchBookmark } from './actions.js';
 
 export const renderInstructions = (id, data) => {
