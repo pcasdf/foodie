@@ -53,23 +53,24 @@ export const fetchRecipes = async term => {
 };
 
 const fetchDetails = async id => {
-  const main = document.getElementById('main');
   try {
     const response = await axios.get(
       `https://api.spoonacular.com/recipes/${id}/information?apiKey=${KEY}`
     );
-
-    main.innerHTML += createCard(response.data);
+    localStorage.setItem(id, JSON.stringify(response.data));
 
     const prevState = localStorage.getItem('foodie-state');
     localStorage.setItem('foodie-state', prevState + ',' + id);
-    localStorage.setItem(id, JSON.stringify(response.data));
-
-    renderInstructions(id, response.data.analyzedInstructions[0].steps);
-    renderIngredients(id, response.data.extendedIngredients);
   } catch (error) {
-    console.log('error');
+    console.log('wtf');
   }
+
+  const item = JSON.parse(localStorage.getItem(id));
+  const main = document.getElementById('main');
+  main.innerHTML += createCard(item);
+
+  renderInstructions(id, item.analyzedInstructions[0].steps);
+  renderIngredients(id, item.extendedIngredients);
 };
 
 export const fetchBookmark = item => {

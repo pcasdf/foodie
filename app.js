@@ -56,12 +56,16 @@ const mainLink = document.getElementById('main-link');
 const bookmarksLink = document.getElementById('bookmarks-link');
 const videosLink = document.getElementById('videos-link');
 
-window.addEventListener('click', e => toggleModal(e));
+addEventListener('click', e => toggleModal(e));
 search.addEventListener('submit', e => handleSubmit(e));
 mainLink.addEventListener('click', e => handleSubmit(e));
 bookmarksLink.addEventListener('click', e => handleShowBookmarks(e));
 videosLink.addEventListener('click', handleShowVideos);
 filterLink.addEventListener('click', toggleFilters);
 filters.addEventListener('click', handleFilters);
+
+if (!localStorage.getItem('foodie-bookmarks')) {
+  localStorage.setItem('foodie-bookmarks', '');
+}
 
 resetFilters();
