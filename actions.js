@@ -25,7 +25,8 @@ export const fetchVideos = async (term, token) => {
     );
     localStorage.setItem('next-video', response.data.nextPageToken);
     localStorage.setItem('prev-video', response.data.prevPageToken);
-    renderVideos(response.data.items);
+    localStorage.setItem('video-response', JSON.stringify(response.data.items));
+    renderVideos(JSON.parse(localStorage.getItem('video-response')));
   } catch (error) {
     console.log('error');
   }
