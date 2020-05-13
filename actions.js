@@ -25,12 +25,10 @@ export const fetchVideos = async (term, token) => {
     );
     localStorage.setItem('next-video', response.data.nextPageToken);
     localStorage.setItem('prev-video', response.data.prevPageToken);
-    localStorage.setItem('video-response', JSON.stringify(response.data.items));
+    renderVideos(response.data.items);
   } catch (error) {
     console.log('error');
   }
-
-  renderVideos(JSON.parse(localStorage.getItem('video-response')));
 };
 
 export const fetchRecipes = async term => {
