@@ -116,7 +116,7 @@ h3:hover {
 }
 
 .modal-content {
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   margin: 10% auto;
   width: 60%;
 }
@@ -160,14 +160,14 @@ h3:hover {
 
 .modal-top {
   background: rgba(255, 255, 255, 0.95);
-  border-radius: 1rem;
+  border-radius: 2rem;
 }
 
 .modal-description {
   text-align: left;
   line-height: 1.5rem;
   background: rgba(255, 255, 255, 0.9);
-  border-radius: 1rem;
+  border-radius: 2rem;
   padding: 1.5rem 3rem;
   margin: 2rem 0;
 }
@@ -176,7 +176,7 @@ h3:hover {
   display: flex;
   flex-flow: row nowrap;
   background: rgba(255, 255, 255, 0.9);
-  border-radius: 1rem;
+  border-radius: 2rem;
   padding: 1rem 2rem 2rem 2rem;
   text-align: left;
 }
