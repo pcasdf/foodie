@@ -70,9 +70,6 @@ export const handleFilters = e => {
       updatedIntoleranceParams.join(',')
     );
   }
-
-  console.log(localStorage.getItem('diet-params'));
-  console.log(localStorage.getItem('intolerance-params'));
   renderFilters();
 };
 
