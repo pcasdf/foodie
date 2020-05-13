@@ -25,6 +25,8 @@ export const createCard = item => {
       </div>
 
       <div class='modal' id='${id}-modal'>
+        <div class='go-prev' id='${id}'><</div>
+        <div class='go-next' id='${id}'>></div>
         <div class='modal-content'>
           <div class='modal-top'>
             <div class='modal-title'>

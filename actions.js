@@ -6,7 +6,7 @@ import {
 } from './renders.js';
 
 const KEY = '51669788a26741668f1b7c5945d50131';
-const GOOGLE_KEY = 'AIzaSyACGwyCMNDgQcweesXc_uCuc7EZ_I6FOA8';
+const GOOGLE_KEY = 'AIzaSyDkC5hyKSk8qT4aWox2UEMTWOYoiakSWng';
 
 export const fetchVideos = async (term, token) => {
   try {

@@ -113,6 +113,30 @@ h3:hover {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
+.go-next {
+  font-size: 3rem;
+  color: #bbbbbb;
+  position: fixed;
+  right: 7rem;
+  top: 40vh;
+}
+
+.go-next:hover {
+  cursor: default;
+}
+
+.go-prev {
+  font-size: 3rem;
+  color: #bbbbbb;
+  position: fixed;
+  left: 7rem;
+  top: 40vh;
+}
+
+.go-prev:hover {
+  cursor: default;
+}
+
 .modal-content {
   border-radius: 1rem;
   margin: 10% auto;
