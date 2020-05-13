@@ -64,15 +64,13 @@ h3:hover {
 .button {
   background-color: #2196f3;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 0.4rem;
   outline: none;
   color: white;
-  padding: 0.9rem 1.4rem;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
   font-size: 0.9rem;
-  margin-bottom: 1rem;
+  padding: 0.9rem;
 }
 
 .source {
@@ -140,9 +138,11 @@ h3:hover {
 }
 
 .modal-title {
-  padding: 2rem 0 1rem 4rem;
+  padding: 2rem 3rem 1rem 4rem;
   margin-bottom: 0;
   text-align: left;
+  display: flex;
+  justify-content: space-between;
 }
 
 .modal-header {
@@ -189,8 +189,16 @@ h3:hover {
 }
 
 .modal-details {
-  width: 50%;
-  padding: 1rem 0 0 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  width: 40%;
+  padding: 0.5rem 0 0 2rem;
+  text-align: left;
+  line-height: 0.2rem;
+}
+
+.modal-details button {
+  align-self: center;
 }
 
 .modal-ingredients {
@@ -202,8 +210,7 @@ h3:hover {
 }
 
 .ingredients li {
-  border-bottom: 1px solid #eeeeee;
-  padding: 15px 0;
+  padding: 10px 0;
 }
 
 .modal-instructions {
@@ -233,6 +240,14 @@ h3:hover {
   justify-content: space-evenly;
   padding: 2rem 5rem;
   padding-bottom: 0;
+}
+
+.recipe-nav-content {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2rem 5rem;
+  padding-bottom: 0;
+  z-index: 1;
 }
 
 .video-card {

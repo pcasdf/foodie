@@ -13,6 +13,7 @@ export const toggleModal = e => {
       item.innerText = 'Add Bookmark';
     }
     const data = JSON.parse(localStorage.getItem(item.id));
+    console.log(data);
   } else if (id) {
     const modal = document.getElementById(`${id}-modal`);
 

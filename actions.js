@@ -25,7 +25,6 @@ export const fetchVideos = async (term, token) => {
     );
     localStorage.setItem('next-video', response.data.nextPageToken);
     localStorage.setItem('prev-video', response.data.prevPageToken);
-    console.log(response.data);
     renderVideos(response.data.items);
   } catch (error) {
     console.log('error');
@@ -46,16 +45,33 @@ export const fetchRecipes = async term => {
 
   try {
     const response = await axios.get(
-      `https://api.spoonacular.com/recipes/search?apiKey=${KEY}&query=${term}&number=12&diet=${dietParams}&intolerances=${intoleranceParams}`
+      `https://api.spoonacular.com/recipes/search?apiKey=${KEY}&query=${term}&number=300&diet=${dietParams}&intolerances=${intoleranceParams}`
     );
-    console.log(response);
+
     localStorage.setItem('foodie-state', '');
     localStorage.setItem('foodie-filtered', '');
     localStorage.setItem('total-results', response.data.totalResults);
-    console.log(localStorage.getItem('total-results'));
-    response.data.results.forEach(item => fetchDetails(item.id));
+    localStorage.setItem(
+      'response-data',
+      JSON.stringify(response.data.results)
+    );
+
+    fetchPage();
   } catch (error) {
     console.log('error');
+  }
+};
+
+export const fetchPage = () => {
+  const index = localStorage.getItem('recipe-index');
+  const response = JSON.parse(localStorage.getItem('response-data'));
+  localStorage.setItem('foodie-state', '');
+
+  for (let i = index - 12; i < index; i++) {
+    const prevState = localStorage.getItem('foodie-state');
+    localStorage.setItem('foodie-state', prevState + ',' + response[i].id);
+
+    fetchDetails(response[i].id);
   }
 };
 
@@ -65,8 +81,6 @@ const fetchDetails = async id => {
       `https://api.spoonacular.com/recipes/${id}/information?apiKey=${KEY}`
     );
     localStorage.setItem(id, JSON.stringify(response.data));
-    const prevState = localStorage.getItem('foodie-state');
-    localStorage.setItem('foodie-state', prevState + ',' + id);
   } catch (error) {
     console.log('wtf');
   }

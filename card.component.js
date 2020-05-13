@@ -9,7 +9,9 @@ export const createCard = item => {
     glutenFree,
     vegan,
     summary,
-    sourceUrl
+    sourceUrl,
+    healthScore,
+    spoonacularScore
   } = item;
   const card = `
     <div class='recipe' id='${id}-div'>
@@ -35,10 +37,15 @@ export const createCard = item => {
 
               <div class='modal-details'>
                 <p>Servings: ${servings}</p>
-                <p>Prep Time: ${preparationMinutes} minutes</p>
+                <p>Prep: ${
+                  preparationMinutes ? preparationMinutes + ' minutes' : ''
+                }</p>
                 <p>Cook Time: ${readyInMinutes} minutes</p>
+                <p>Health Score: ${healthScore}</p>
+                <p>Spoonacular Score: ${spoonacularScore}</p>
                 <p>${glutenFree ? 'Gluten Free' : ''}</p>
                 <p>${vegan ? 'Vegan' : ''}</p>
+
                 <button class='button' id='${id}'>
                 ${
                   localStorage.getItem('foodie-bookmarks').includes(id)
