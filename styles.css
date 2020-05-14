@@ -27,7 +27,7 @@ h3:hover {
   border-radius: 2rem;
   margin-bottom: 3rem;
   margin-top: 3rem;
-  padding-bottom: 4rem;
+  padding-bottom: 2rem;
 }
 
 .header {
@@ -67,6 +67,16 @@ h3:hover {
   transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
 }
 
+.footer {
+  font-size: 12px;
+  text-align: center;
+  padding-top: 3rem;
+}
+
+.green {
+  color: green;
+}
+
 .button {
   background-color: #2196f3;
   border: none;
@@ -81,6 +91,7 @@ h3:hover {
 
 .source {
   margin-top: 3rem;
+  font-size: 12px;
 }
 
 .recipe {
@@ -233,18 +244,23 @@ h3:hover {
 }
 
 .modal-details {
-  font-family: 'Muli', sans-serif;
-  font-size: 15px;
   display: flex;
   flex-flow: column nowrap;
+  justify-content: space-between;
   width: 40%;
   padding: 1rem 0 0 2rem;
   text-align: left;
-  line-height: 0.2rem;
+}
+
+.modal-details-2 {
+  font-family: 'Muli', sans-serif;
+  font-size: 15px;
+  line-height: 1rem;
 }
 
 .modal-details button {
   align-self: center;
+  bottom: 0;
 }
 
 .modal-ingredients {
@@ -260,7 +276,7 @@ h3:hover {
 }
 
 .modal-instructions {
-  padding-top: 1rem;
+  padding-top: 5px;
   line-height: 1.5rem;
   width: 50%;
 }

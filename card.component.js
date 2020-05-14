@@ -38,15 +38,19 @@ export const createCard = item => {
               </div>
 
               <div class='modal-details'>
-                <p>Servings: ${servings}</p>
-                <p>Prep: ${
-                  preparationMinutes ? preparationMinutes + ' minutes' : ''
-                }</p>
-                <p>Cook Time: ${readyInMinutes} minutes</p>
-                <p>Health Score: ${healthScore}</p>
-                <p>Spoonacular Score: ${spoonacularScore}</p>
-                <p>${glutenFree ? 'Gluten Free' : ''}</p>
-                <p>${vegan ? 'Vegan' : ''}</p>
+                <div class='modal-details-2'>
+                  <p>Servings: ${servings}</p>
+                  <p>Prep: ${
+                    preparationMinutes ? preparationMinutes + ' minutes' : ''
+                  }</p>
+                  <p>Cook Time: ${readyInMinutes} minutes</p>
+                  <p>Health Score: ${healthScore}</p>
+                  <p>Spoonacular Score: <span style='color: ${scoreCheck(
+                    spoonacularScore
+                  )}'>${spoonacularScore}</span></p>
+                  <p>${glutenFree ? 'Gluten Free' : ''}</p>
+                  <p>${vegan ? 'Vegan' : ''}</p>
+                </div>
 
                 <button class='button' id='${id}'>
                 ${
@@ -75,10 +79,6 @@ export const createCard = item => {
               </ol>
             </div>
           </div>
-
-          <div class='modal-footer'>
-            bookmark / <span class='share' id='${id}'>share</span>
-          </div>
         </div>
       </div>
 
@@ -86,4 +86,16 @@ export const createCard = item => {
   `;
 
   return card;
+};
+
+const scoreCheck = score => {
+  if (score > 79) {
+    return '#32CD32';
+  } else if (score > 59) {
+    return '#FFFF00';
+  } else if (score > 39) {
+    return 'orange';
+  } else {
+    return 'red';
+  }
 };
