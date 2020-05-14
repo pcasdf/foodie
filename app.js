@@ -118,6 +118,32 @@ const handleVideoNav = e => {
   scroll(0, 225);
 };
 
+const handleKeyNav = e => {
+  if (e.keyCode === 37) {
+    const id = localStorage.getItem('current-modal');
+    const state = localStorage.getItem('foodie-state').split(',');
+    const next = state[state.indexOf(id) - 1];
+    localStorage.setItem('current-modal', next);
+
+    const currentModal = document.getElementById(`${id}-modal`);
+    const nextModal = document.getElementById(`${next}-modal`);
+
+    currentModal.style.display = 'none';
+    nextModal.style.display = 'block';
+  } else if (e.keyCode === 39) {
+    const id = localStorage.getItem('current-modal');
+    const state = localStorage.getItem('foodie-state').split(',');
+    const next = state[state.indexOf(id) + 1];
+    localStorage.setItem('current-modal', next);
+
+    const currentModal = document.getElementById(`${id}-modal`);
+    const nextModal = document.getElementById(`${next}-modal`);
+
+    currentModal.style.display = 'none';
+    nextModal.style.display = 'block';
+  }
+};
+
 const search = document.getElementById('search');
 const main = document.getElementById('main');
 const filters = document.getElementById('filters');
@@ -137,6 +163,7 @@ filterLink.addEventListener('click', toggleFilters);
 filters.addEventListener('click', handleFilters);
 videoNav.addEventListener('click', handleVideoNav);
 recipeNav.addEventListener('click', handleRecipeNav);
+window.addEventListener('keydown', handleKeyNav);
 
 if (!localStorage.getItem('foodie-bookmarks')) {
   localStorage.setItem('foodie-bookmarks', '');

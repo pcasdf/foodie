@@ -33,6 +33,7 @@ export const toggleModal = e => {
     currentModal.style.display = 'none';
     prevModal.style.display = 'block';
   } else if (id) {
+    localStorage.setItem('current-modal', id);
     const modal = document.getElementById(`${id}-modal`);
 
     if (modal) {

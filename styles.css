@@ -61,6 +61,12 @@ h3:hover {
   padding: 1rem;
 }
 
+.main img:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+}
+
 .button {
   background-color: #2196f3;
   border: none;
@@ -89,6 +95,7 @@ h3:hover {
 }
 
 .recipe-content {
+  letter-spacing: 0.5px;
   width: 100%;
 }
 
@@ -111,6 +118,8 @@ h3:hover {
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.6);
+  transition-property: opacity;
+  transition-duration: 3s;
 }
 
 .go-next {
@@ -119,10 +128,14 @@ h3:hover {
   position: fixed;
   right: 7rem;
   top: 40vh;
+  transition-property: font-size;
+  transition: 0.3s;
+  transition-timing-function: ease-out;
 }
 
 .go-next:hover {
-  cursor: default;
+  cursor: pointer;
+  font-size: 3.2rem;
 }
 
 .go-prev {
@@ -131,10 +144,13 @@ h3:hover {
   position: fixed;
   left: 7rem;
   top: 40vh;
+  transition-property: font-size;
+  transition: 0.2s;
 }
 
 .go-prev:hover {
-  cursor: default;
+  cursor: pointer;
+  font-size: 3.2rem;
 }
 
 .modal-content {
@@ -213,10 +229,12 @@ h3:hover {
 }
 
 .modal-details {
+  font-family: 'Muli', sans-serif;
+  font-size: 15px;
   display: flex;
   flex-flow: column nowrap;
   width: 40%;
-  padding: 0.5rem 0 0 2rem;
+  padding: 1rem 0 0 2rem;
   text-align: left;
   line-height: 0.2rem;
 }
