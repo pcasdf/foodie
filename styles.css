@@ -473,4 +473,22 @@ h3:hover {
     padding-left: 0.3rem;
     line-height: 1rem;
   }
+
+  .nav-bar {
+    display: block;
+    width: 100%;
+  }
+
+  .nav-bar span {
+    padding-bottom: 2px;
+  }
+
+  .main {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .recipe {
+    width: 40%;
+  }
 }
