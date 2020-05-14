@@ -19,6 +19,10 @@ h3:hover {
   cursor: default;
 }
 
+.search input:focus {
+  outline: none;
+}
+
 .body {
   width: 80%;
   margin: 0 auto;
