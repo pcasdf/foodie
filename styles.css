@@ -365,3 +365,112 @@ h3:hover {
 .filter-forms label {
   width: 90%;
 }
+
+@media (max-width: 600px) {
+  .modal-content {
+    border-radius: 1rem;
+    margin: 5% auto;
+    width: 70%;
+  }
+
+  .modal-header {
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 0 1rem;
+    padding-bottom: 2rem;
+  }
+
+  .modal-title span {
+    font-family: 'Cardo', serif;
+    font-size: 1.5rem;
+    padding-top: 0.5rem;
+    text-transform: lowercase;
+  }
+
+  .modal-img {
+    align-self: center;
+    width: 100%;
+    padding-right: 1rem;
+  }
+
+  .modal button {
+    width: 70%;
+    align-self: center;
+    margin-right: 45px;
+  }
+
+  .modal-title {
+    padding: 0.5rem 1rem 1rem 2rem;
+    margin-bottom: 0;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .modal-instructions {
+    width: 100%;
+  }
+
+  .go-next {
+    position: fixed;
+    right: 1.5rem;
+    top: 50vh;
+  }
+
+  .go-prev {
+    position: fixed;
+    left: 1.5rem;
+    top: 50vh;
+  }
+
+  .modal-description {
+    text-align: left;
+    line-height: 1.4rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 2rem;
+    padding: 1rem 3rem;
+    margin: 2rem 0;
+  }
+
+  .modal-body {
+    display: flex;
+    flex-flow: column nowrap;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 2rem;
+    padding: 0.5rem 2rem 2rem 2rem;
+    text-align: left;
+  }
+
+  .modal-details {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem 0 0 2rem;
+    text-align: left;
+  }
+
+  .modal-details-2 {
+    font-family: 'Muli', sans-serif;
+    font-size: 15px;
+    line-height: 1rem;
+  }
+
+  .modal-details button {
+    align-self: center;
+    bottom: 0;
+  }
+
+  .modal-ingredients {
+    width: 100%;
+  }
+
+  .modal-instructions ol {
+    padding-left: 0.3rem;
+  }
+
+  .ingredients {
+    padding-left: 0.3rem;
+    line-height: 1rem;
+  }
+}
