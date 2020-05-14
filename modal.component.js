@@ -47,10 +47,9 @@ const handleBookmark = id => {
     newData = JSON.parse(prevData);
   }
   if (newData.includes(id)) {
-    newData.filter(item => item !== id);
+    newData = newData.filter(item => item !== id);
   } else {
     newData.push(id);
   }
   localStorage.setItem('bookmarks', JSON.stringify(newData));
-  console.log(newData);
 };

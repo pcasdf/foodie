@@ -164,10 +164,6 @@ videoNav.addEventListener('click', handleVideoNav);
 recipeNav.addEventListener('click', handleRecipeNav);
 window.addEventListener('keydown', handleKeyNav);
 
-if (!localStorage.getItem('bookmarks')) {
-  localStorage.setItem('bookmarks', JSON.stringify([]));
-}
-
 localStorage.setItem('current-state', JSON.stringify([]));
 localStorage.setItem('filters', JSON.stringify({ diet: [], intolerance: [] }));
 
