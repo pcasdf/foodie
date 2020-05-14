@@ -96,7 +96,7 @@ const scoreCheck = score => {
   if (score > 79) {
     return '#32CD32';
   } else if (score > 59) {
-    return '#FFFF00';
+    return '#DDDD00';
   } else if (score > 39) {
     return 'orange';
   } else {
