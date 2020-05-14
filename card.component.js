@@ -53,11 +53,7 @@ export const createCard = item => {
                 </div>
 
                 <button class='button' id='${id}'>
-                ${
-                  localStorage.getItem('bookmarks').includes(id)
-                    ? 'Remove Bookmark'
-                    : 'Add Bookmark'
-                }
+                ${checkBookmarks(id) ? 'Remove Bookmark' : 'Add Bookmark'}
                 </button>
               </div>
             </div>
@@ -86,6 +82,13 @@ export const createCard = item => {
   `;
 
   return card;
+};
+
+const checkBookmarks = id => {
+  if (localStorage.getItem('bookmarks').includes(id)) {
+    return true;
+  }
+  return false;
 };
 
 const scoreCheck = score => {
