@@ -85,8 +85,9 @@ export const createCard = item => {
 };
 
 const checkBookmarks = id => {
-  if (localStorage.getItem('bookmarks').includes(id)) {
-    return true;
+  const bookmarks = localStorage.getItem('boomarks');
+  if (bookmarks) {
+    return bookmarks.includes(id) ? true : false;
   }
   return false;
 };
