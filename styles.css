@@ -122,7 +122,8 @@ h3:hover {
   transition-duration: 3s;
 }
 
-.go-next {
+.go-next,
+.go-next-video {
   font-size: 3rem;
   color: #bbbbbb;
   position: fixed;
@@ -133,12 +134,14 @@ h3:hover {
   transition-timing-function: ease-out;
 }
 
-.go-next:hover {
+.go-next:hover,
+.go-next-video:hover {
   cursor: pointer;
   font-size: 3.2rem;
 }
 
-.go-prev {
+.go-prev,
+.go-prev-video {
   font-size: 3rem;
   color: #bbbbbb;
   position: fixed;
@@ -148,7 +151,8 @@ h3:hover {
   transition: 0.2s;
 }
 
-.go-prev:hover {
+.go-prev:hover,
+.go-prev-video:hover {
   cursor: pointer;
   font-size: 3.2rem;
 }

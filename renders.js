@@ -21,9 +21,9 @@ export const renderVideos = items => {
 
 export const renderBookmarks = items => {
   main.innerHTML = '';
-  const foodieBookmarks = localStorage.getItem('foodie-bookmarks');
-  localStorage.setItem('foodie-state', foodieBookmarks);
-  const bookmarks = foodieBookmarks.split(',');
+  let bookmarks = localStorage.getItem('bookmarks');
+  localStorage.setItem('current-state', bookmarks);
+  bookmarks = JSON.parse(bookmarks);
   bookmarks.forEach(item => fetchBookmark(item));
 };
 

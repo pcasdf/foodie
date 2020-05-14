@@ -25,6 +25,10 @@ export const fetchVideos = async (term, token) => {
     );
     localStorage.setItem('next-video', response.data.nextPageToken);
     localStorage.setItem('prev-video', response.data.prevPageToken);
+
+    const currentState = [];
+    response.data.items.forEach(each => currentState.push(each.id.videoId));
+    localStorage.setItem('current-state', JSON.stringify(currentState));
     renderVideos(response.data.items);
   } catch (error) {
     console.log('error');
@@ -32,30 +36,15 @@ export const fetchVideos = async (term, token) => {
 };
 
 export const fetchRecipes = async term => {
-  const dietParams = localStorage
-    .getItem('diet-params')
-    .split(',')
-    .filter(each => each !== '')
-    .join(',');
-  const intoleranceParams = localStorage
-    .getItem('intolerance-params')
-    .split(',')
-    .filter(each => each !== '')
-    .join(',');
+  const filters = JSON.parse(localStorage.getItem('filters'));
+  const dietParams = filters.diet.join(',');
+  const intoleranceParams = filters.intolerance.join(',');
 
   try {
     const response = await axios.get(
-      `https://api.spoonacular.com/recipes/search?apiKey=${KEY}&query=${term}&number=300&diet=${dietParams}&intolerances=${intoleranceParams}`
+      `https://api.spoonacular.com/recipes/search?apiKey=${KEY}&query=${term}&number=4&diet=${dietParams}&intolerances=${intoleranceParams}`
     );
-
-    localStorage.setItem('foodie-state', '');
-    localStorage.setItem('foodie-filtered', '');
-    localStorage.setItem('total-results', response.data.totalResults);
-    localStorage.setItem(
-      'response-data',
-      JSON.stringify(response.data.results)
-    );
-
+    localStorage.setItem('response', JSON.stringify(response.data.results));
     fetchPage();
   } catch (error) {
     console.log('error');
@@ -64,13 +53,11 @@ export const fetchRecipes = async term => {
 
 export const fetchPage = () => {
   const index = localStorage.getItem('recipe-index');
-  const response = JSON.parse(localStorage.getItem('response-data'));
-  localStorage.setItem('foodie-state', '');
+  const response = JSON.parse(localStorage.getItem('response'));
+  const currentState = [];
+  localStorage.setItem('current-state', JSON.stringify(currentState));
 
   for (let i = index - 12; i < index; i++) {
-    const prevState = localStorage.getItem('foodie-state');
-    localStorage.setItem('foodie-state', prevState + ',' + response[i].id);
-
     fetchDetails(response[i].id);
   }
 };
@@ -82,8 +69,12 @@ const fetchDetails = async id => {
     );
     localStorage.setItem(id, JSON.stringify(response.data));
   } catch (error) {
-    console.log('wtf');
+    console.log('error');
   }
+
+  const currentState = JSON.parse(localStorage.getItem('current-state'));
+  currentState.push(id.toString());
+  localStorage.setItem('current-state', JSON.stringify(currentState));
 
   const item = JSON.parse(localStorage.getItem(id));
   const main = document.getElementById('main');

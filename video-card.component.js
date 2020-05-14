@@ -2,7 +2,6 @@ export const createVideoCard = item => {
   const { id, snippet } = item;
   const card = `
     <div class='video-card' id='${id.videoId}'>
-
       <div class='video-img' id='${id.videoId}'>
         <img src='${snippet.thumbnails.medium.url}' id='${id.videoId}'>
       </div>
@@ -13,6 +12,9 @@ export const createVideoCard = item => {
       </div>
 
       <div class='modal' id='${id.videoId}-modal'>
+        <div class='go-prev' id='${id.videoId}'><</div>
+        <div class='go-next' id='${id.videoId}'>></div>
+
         <div class='modal-content-video'>
           <iframe class='video-player' src='https://www.youtube.com/embed/${id.videoId}' />
         </div>

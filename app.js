@@ -39,6 +39,7 @@ const handleShowBookmarks = e => {
 
   main.innerHTML = '';
   videoNav.innerHTML = '';
+  recipeNav.innerHTML = '';
 
   resetFilters();
   renderBookmarks();
@@ -99,13 +100,13 @@ const handleVideoNav = e => {
   let videoIndex = localStorage.getItem('video-index');
 
   if (e.target.id === 'video-next') {
-    const pageToken = localStorage.getItem('next-vid');
+    const pageToken = localStorage.getItem('next-video');
 
     localStorage.setItem('video-index', +videoIndex + 10);
 
     fetchVideos(search.input.value, pageToken);
   } else if (e.target.id === 'video-prev') {
-    const pageToken = localStorage.getItem('prev-vid');
+    const pageToken = localStorage.getItem('prev-video');
 
     localStorage.setItem('video-index', +videoIndex - 10);
 
@@ -121,24 +122,22 @@ const handleVideoNav = e => {
 const handleKeyNav = e => {
   if (e.keyCode === 37) {
     const id = localStorage.getItem('current-modal');
-    const state = localStorage.getItem('foodie-state').split(',');
+    const state = JSON.parse(localStorage.getItem('current-state'));
     const next = state[state.indexOf(id) - 1];
-    localStorage.setItem('current-modal', next);
-
     const currentModal = document.getElementById(`${id}-modal`);
     const nextModal = document.getElementById(`${next}-modal`);
 
+    localStorage.setItem('current-modal', next);
     currentModal.style.display = 'none';
     nextModal.style.display = 'block';
   } else if (e.keyCode === 39) {
     const id = localStorage.getItem('current-modal');
-    const state = localStorage.getItem('foodie-state').split(',');
+    const state = JSON.parse(localStorage.getItem('current-state'));
     const next = state[state.indexOf(id) + 1];
-    localStorage.setItem('current-modal', next);
-
     const currentModal = document.getElementById(`${id}-modal`);
     const nextModal = document.getElementById(`${next}-modal`);
 
+    localStorage.setItem('current-modal', next);
     currentModal.style.display = 'none';
     nextModal.style.display = 'block';
   }
@@ -168,5 +167,8 @@ window.addEventListener('keydown', handleKeyNav);
 if (!localStorage.getItem('foodie-bookmarks')) {
   localStorage.setItem('foodie-bookmarks', '');
 }
+
+localStorage.setItem('current-state', JSON.stringify([]));
+localStorage.setItem('filters', JSON.stringify({ diet: [], intolerance: [] }));
 
 resetFilters();
