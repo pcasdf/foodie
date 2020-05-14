@@ -25,9 +25,9 @@ https://spoonacular.com/food-api/docs
 
 ## Wireframes
 
-![landing page](https://git.generalassemb.ly/pcho90/foodie/blob/master/landing-page.jpg)
-![videos](https://git.generalassemb.ly/pcho90/foodie/blob/master/videos.jpg)
-![bookmarks](https://git.generalassemb.ly/pcho90/foodie/blob/master/bookmarks.jpg)
+![landing page](https://git.generalassemb.ly/pcho90/foodie/blob/master/proposal/landing-page.jpg)
+![videos](https://git.generalassemb.ly/pcho90/foodie/blob/master/proposal/videos.jpg)
+![bookmarks](https://git.generalassemb.ly/pcho90/foodie/blob/master/proposal/bookmarks.jpg)
 
 ## MVP
 
@@ -54,7 +54,7 @@ https://spoonacular.com/food-api/docs
 
 ## Priority Matrix
 
-![priority matrix](https://git.generalassemb.ly/pcho90/foodie/blob/master/priority-matrix-1.jpg)
+![priority matrix](https://git.generalassemb.ly/pcho90/foodie/blob/master/proposal/priority-matrix-1.jpg)
 
 ## Timeframes
 
