@@ -122,10 +122,6 @@ export const toggleFilters = () => {
         <label>Dairy Free</label>
       </div>
     `;
-    localStorage.setItem(
-      'foodie-filtered',
-      localStorage.getItem('foodie-state')
-    );
   } else {
     filters.innerHTML = '';
   }

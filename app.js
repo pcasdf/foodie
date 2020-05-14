@@ -8,6 +8,12 @@ import { recipeNavigation } from './recipe-navigation.component.js';
 const border = 'border-bottom: 1px solid black';
 const none = 'border-bottom: none';
 
+const clear = () => {
+  main.innerHTML = '';
+  videoNav.innerHTML = '';
+  recipeNav.innerHTML = '';
+};
+
 const handleSubmit = e => {
   e.preventDefault();
 
@@ -15,9 +21,7 @@ const handleSubmit = e => {
   bookmarksLink.style = none;
   videosLink.style = none;
 
-  main.innerHTML = '';
-  videoNav.innerHTML = '';
-  recipeNav.innerHTML = '';
+  clear();
 
   fetchRecipes(search.input.value);
 
@@ -37,11 +41,7 @@ const handleShowBookmarks = e => {
   bookmarksLink.style = border;
   videosLink.style = none;
 
-  main.innerHTML = '';
-  videoNav.innerHTML = '';
-  recipeNav.innerHTML = '';
-
-  resetFilters();
+  clear();
   renderBookmarks();
 };
 
@@ -50,8 +50,8 @@ const handleShowVideos = () => {
     mainLink.style = none;
     bookmarksLink.style = none;
     videosLink.style = border;
-    videoNav.innerHTML = '';
-    recipeNav.innerHTML = '';
+
+    clear();
     videoNav.innerHTML += videoNavigation();
 
     localStorage.setItem('video-index', '10');
@@ -60,17 +60,8 @@ const handleShowVideos = () => {
     const videoStatus = document.getElementById('video-status');
     videoStatus.innerText = `Showing results ${videoIndex - 9} - ${videoIndex}`;
 
-    resetFilters();
     fetchVideos(search.input.value);
   }
-};
-
-const resetFilters = () => {
-  filters.innerHTML = '';
-  localStorage.setItem('filter-state', '');
-  localStorage.setItem('foodie-state', '');
-  localStorage.setItem('diet-params', '');
-  localStorage.setItem('intolerance-params', '');
 };
 
 const handleRecipeNav = e => {
@@ -166,5 +157,3 @@ window.addEventListener('keydown', handleKeyNav);
 
 localStorage.setItem('current-state', JSON.stringify([]));
 localStorage.setItem('filters', JSON.stringify({ diet: [], intolerance: [] }));
-
-resetFilters();
