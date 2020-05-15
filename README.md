@@ -69,3 +69,45 @@ https://spoonacular.com/food-api/docs
 | YouTube Stream |    L     |      4hrs      |      1hr      |     1hr     |
 | YouTube Modal  |    L     |      2hrs      |      1hr      |     1hr     |
 | Total          |    H     |     30hrs      |     27hrs     |    27hrs    |
+
+## Code Snippet
+
+This is the main logic code that drives the filter functionality. The function uses separate references to the filtered state and non-filtered state to enable reverse filtering.
+
+```
+export const renderFilters = () => {
+  const filters = JSON.parse(localStorage.getItem('filters'));
+  let state = JSON.parse(localStorage.getItem('current-state'));
+  let filteredState = [];
+
+  for (let each in filters) {
+    for (let param of filters[each]) {
+      if (filteredState.length === 0) {
+        for (let item of state) {
+          const data = JSON.parse(localStorage.getItem(item));
+          if (data[param]) {
+            filteredState.push(item);
+          }
+        }
+      } else {
+        for (let item of filteredState) {
+          const data = JSON.parse(localStorage.getItem(item));
+          if (!data[param]) {
+            filteredState = filteredState.filter(ea => ea !== item);
+          }
+        }
+      }
+    }
+  }
+
+  if (filters.diet.length < 1 && filters.intolerance.length < 1) {
+    renderState(state);
+  } else {
+    renderState(filteredState);
+  }
+};
+```
+
+## Change Log
+
+When this application was initially deployed, the search component received the GET requests to the API but wouldn't render them to the DOM, although the same code would render properly when tested locally. I found that this is related to the asynchronicity of the request, becausre the component continues to make requests as it passes the data to another component to render the response. I found two fixes to this issue. The first method is to add awaits to the passing of the responses, and the second is to save the responses to local storage. I opted for the latter method because that allows me to reference the same data at a later point, from anywhere in the application, without making further GET requests.
