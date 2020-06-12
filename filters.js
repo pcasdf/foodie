@@ -12,58 +12,20 @@ export const handleFilters = e => {
     filters = JSON.parse(filters);
   }
 
-  if (e.target.checked) {
-    switch (e.target.id) {
-      case 'vegetarian':
-        filters = {
+  if (e.target.id === 'vegetarian' || e.target.id === 'vegan') {
+    filters.diet.includes(e.target.id)
+      ? (filters = {
           ...filters,
-          diet: [...filters.diet, 'vegetarian']
-        };
-        break;
-      case 'vegan':
-        filters = {
+          diet: filters.diet.filter(each => each !== e.target.id)
+        })
+      : filters.diet.push(e.target.id);
+  } else if (e.target.id === 'glutenFree' || e.target.id === 'dairyFree') {
+    filters.intolerance.includes(e.target.id)
+      ? (filters = {
           ...filters,
-          diet: [...filters.diet, 'vegan']
-        };
-        break;
-      case 'glutenFree':
-        filters = {
-          ...filters,
-          intolerance: [...filters.intolerance, 'gluten']
-        };
-        break;
-      case 'dairyFree':
-        filters = {
-          ...filters,
-          intolerance: [...filters.intolerance, 'dairy']
-        };
-    }
-  } else {
-    switch (e.target.id) {
-      case 'vegetarian':
-        filters = {
-          ...filters,
-          diet: filters.diet.filter(item => item !== 'vegetarian')
-        };
-        break;
-      case 'vegan':
-        filters = {
-          ...filters,
-          diet: filters.diet.filter(item => item !== 'vegan')
-        };
-        break;
-      case 'glutenFree':
-        filters = {
-          ...filters,
-          intolerance: filters.intolerance.filter(item => item !== 'gluten')
-        };
-        break;
-      case 'dairyFree':
-        filters = {
-          ...filters,
-          intolerance: filters.intolerance.filter(item => item !== 'dairy')
-        };
-    }
+          intolerance: filters.intolerance.filter(each => each !== e.target.id)
+        })
+      : filters.intolerance.push(e.target.id);
   }
 
   localStorage.setItem('filters', JSON.stringify(filters));

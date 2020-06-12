@@ -42,8 +42,9 @@ export const fetchRecipes = async term => {
 
   try {
     const response = await axios.get(
-      `https://api.spoonacular.com/recipes/search?apiKey=${KEY}&query=${term}&number=300&diet=${dietParams}&intolerances=${intoleranceParams}`
+      `https://api.spoonacular.com/recipes/search?apiKey=${KEY}&query=${term}&number=1000&diet=${dietParams}&intolerances=${intoleranceParams}`
     );
+    console.log(response.data.results);
     localStorage.setItem('response', JSON.stringify(response.data.results));
     fetchPage();
   } catch (error) {
